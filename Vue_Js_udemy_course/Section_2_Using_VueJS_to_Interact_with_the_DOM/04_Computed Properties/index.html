@@ -1,0 +1,13 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+	<button v-on:click="counter++">Increase</button>
+	<button v-on:click="counter--">Decrease</button>
+	<button v-on:click="secondCounter++">Increase Second</button>
+	<p>Counter: {{ counter }} | {{ secondCounter }}</p>
+	<!--
+		result() will be executed every time,
+	 	output() will be executed only when the counter variable changes
+	 -->
+	<p>Result: {{ result() }} | {{ output }}</p>
+</div>

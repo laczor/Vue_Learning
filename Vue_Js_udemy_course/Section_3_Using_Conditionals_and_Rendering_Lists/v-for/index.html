@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>VueJS</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+	<!-- Looping through an array, keeping the index -->
+	<!--  While you are looping you can assign the ingerdient element to the 'key' property -->
+	<ul>
+		<li v-for="(ingredient, i) in ingredients" :key="ingredient">{{ ingredient }} ({{ i }})</li>
+	</ul>
+	<button @click="ingredients.push('spices')">Add New</button>
+
+		<!-- Using v-for with template, to generate repetitive html tags -->
+	<!--<template v-for="">-->
+			<!--... html to be reperated-->
+	<!--</template>-->
+
+
+	<hr>
+	<ul>
+		<li v-for="person in persons">
+			<div> {{ person.name}}</div>
+			<div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
+		</li>
+	</ul>
+
+	<!-- Will loop through the integers -->
+	<span v-for="n in 10">{{ n }}</span>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

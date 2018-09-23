@@ -1,0 +1,10 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+		<!-- All the content will be rendered only once! When the variables changes, it won't be changed, re-rendered-->
+	<h1 v-once>{{ title }}</h1>
+	<!-- v-bind will tell Vue js to bind an attribute to a vuejs Data variable-->
+	<p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+	<hr>
+	<p v-html="finishedLink"></p>
+</div>

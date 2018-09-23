@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>VueJS</title>
+	<link rel="stylesheet" href="main.css">
+	<script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+	<!--
+	0. @click will switch the value of the boolean value
+	1. :class="divClasses"  -- Will execute a divCLasses() which will result in the classes
+	2. class="demo" :class="{red: attachRed}" --- will attach red if the value is true
+	3. Will attach color, + red if attachRed is true
+	 -->
+	<div
+			class="demo"
+			@click="attachRed = !attachRed"
+			:class="divClasses"></div>
+	<div class="demo" :class="{red: attachRed}"></div>
+	<div class="demo" :class="[color, {red: attachRed}]"></div>
+	<hr>
+	<!-- Will modify the color property, and will update the div's classname-->
+	<input type="text" v-model="color">
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

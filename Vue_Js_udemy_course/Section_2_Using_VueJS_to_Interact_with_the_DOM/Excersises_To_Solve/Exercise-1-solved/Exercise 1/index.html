@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="">
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="exercise">
+    <!-- 1) Fill the <p> below with your Name and Age - using Interpolation -->
+    <p>VueJS is pretty cool - {{ name }} --  {{ age }}</p>
+    <!-- 2) Output your age, multiplied by 3 -->
+    <p> {{ age*3 }}</p>
+    <!-- 3) Call a function to output a random float between 0 and 1 (Math.random()) -->
+    <p>{{randomNumber() }}</p>
+    <!-- 4) Search any image on Google and output it here by binding the "src" attribute -->
+    <div>
+        <img v-bind:src =image >
+        <!--// When you are using, v-bind, you have to add a reference to the property stored in the Vue object instance-->
+    </div>
+    <!-- 5) Pre-Populate this input with your name (set the "value" attribute) -->
+    <div>
+        <input v-bind:value ="name" type="text">
+    </div>
+</div>
+
+
+<script>
+    //The created new Instances are the core of each view application.
+    //This instances will have 1 major job, to control their html codes and templates.
+    new Vue({
+        //el property is a reserved property of the Vue Object, To which part of the DOM vue is responsible.
+        el: '#exercise',
+        //We store all of the data, which we would like to use in this VUE instance.
+        data: {
+            name: 'Istvan',
+            age: 125,
+            image:"https://www.cats.org.uk/uploads/images/featurebox_sidebar_kids/grief-and-loss.jpg"
+        },
+        //Will store all of the functions, stored in the VueJa
+        methods: {
+            //We can access all of the properties stored as in the data object as "this"
+            randomNumber: function() {
+                return Math.random();
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>VueJS</title>
+	<link rel="stylesheet" href="">
+	<script src="vue.js"></script>
+</head>
+<body>
+<div id="app">  <!--The Created view instance will be responsible for controlling this DOM elemment.-->
+  <input type="text" v-on:input="changeTitle">   <!-- On input, vueJs will call the changeTItle function-->
+  <p>{{ title }}</p>
+</div>
+<script>
+		//The created new Instances are the core of each view application.
+		//This instances will have 1 major job, to control their html codes and templates.
+	new Vue({
+		//el property is a reserved property of the Vue Object, To which part of the DOM vue is responsible.
+	el: '#app',
+		//We store all of the data, which we would like to use in this VUE instance.
+  data: {
+  	title: 'Hello World!'
+  },
+		//Will store all of the functions, stored in the VueJa
+  methods: {
+	    //We can access all of the properties stored as in the data object as "this"
+  	changeTitle: function(event) {
+    	this.title = event.target.value;
+    }
+  }
+});
+</script>
+</body>
+</html>
